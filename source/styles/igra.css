@@ -137,7 +137,7 @@ body {
   background-color: rgb(36, 241, 47);
   border: bold;
   cursor: pointer;
-  width: clamp(70px, 10vw, 100px);
+  width: clamp(90px, 10vw, 100px);
   height: clamp(70px, 10vw, 100px);
   font-weight: 400;
   margin-left: 2vw;
