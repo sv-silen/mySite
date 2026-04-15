@@ -1,0 +1,165 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  background-color: rgb(171, 182, 184);
+  color: beige;
+  font-family: Arial;
+  transition: background-color 0.5s ease; /* Цвет будет меняться плавно */
+}
+.nav-link {
+  color: aquamarine;
+}
+.navbar-nav .nav-link.active {
+  color: rgb(135, 141, 139);
+}
+.navbar-brand img {
+  width: 40px;
+}
+.navbar-toggler {
+  background-color: rgb(135, 141, 139);
+}
+
+.title {
+  display: block;
+  flex-direction: row;
+  flex-wrap: nowrap; /* ЗАПРЕЩАЕМ перенос на новую строку */
+  font-weight: bold;
+  font-size: clamp(0.3rem, 8vw, 5rem);
+  padding-top: 0.5rem;
+  margin-bottom: 1em;
+}
+.title2 {
+  display: inline;
+  font-size: clamp(1rem, 6vw, 3rem);
+  margin-left: 1em;
+  font-weight: bold;
+  color: rgb(73, 87, 87);
+}
+
+.container {
+  display: block;
+  flex-direction: row; /* Выстраиваем элементы в ряд */
+  justify-content: center; /* Центрируем группу кнопок по горизонтали  */
+  align-items: center; /* Центрируем по вертикали */
+  width: 100%; /* Контейнер на всю ширину */
+  flex-wrap: nowrap; /* ЗАПРЕЩАЕМ перенос на новую строку */
+  gap: 4px; /* Совсем маленький зазор между кнопками */
+  padding-left: 0.5em; /* Убираем внутренние отступы контейнера */
+  margin-left: 0em;
+}
+/* СТИЛЬ ДЛЯ КАРТИНКИ (самое важное) */
+.move-icon {
+  /* Вместо auto ставим гибкий размер */
+  width: clamp(40px, 10vw, 80px);
+  height: clamp(40px, 10vw, 80px);
+
+  /* inline-block позволит картинке стоять в ряд с текстом "Ты" и "Компьютер" */
+  display: inline-block;
+
+  /* Центрируем иконку относительно текста */
+  vertical-align: middle;
+
+  object-fit: cover;
+  border-radius: 50%;
+  margin: 0 5px; /* Отступы от текста */
+}
+
+/* Общий стиль для кнопок */
+.move-button {
+  display: inline-flex; /* Центрируем содержимое кнопки */
+  align-items: center; /* Центрируем картинку по вертикали */
+  justify-content: center; /* Центрируем картинку по горизонтали */
+
+  width: 160px; /* Базовый размер (для ПК) */
+  height: 160px;
+  padding: 10px; /* Внутренний отступ, чтобы картинка не касалась краев */
+  border-color: blueviolet;
+  border-radius: 50%; /* Делаем круглыми */
+  flex-shrink: 0; /* ЗАПРЕЩАЕМ кнопке сжиматься/деформироваться */
+}
+/* Настройки для мобильных */
+@media (max-width: 480px) {
+  .move-button {
+    width: 25vw; /* Кнопка сжимается вместе с экраном */
+    height: 25vw;
+    padding: 3px; /* Уменьшаем отступ на мобильных */
+  }
+}
+.js-result.result {
+  margin-left: 2em;
+  font-weight: bold;
+  color: blueviolet;
+}
+.js-score.score {
+  display: block;
+  flex-direction: row;
+  flex-wrap: nowrap; /* ЗАПРЕЩАЕМ перенос на новую строку */
+  font-size: clamp(0.8rem, 2vw, 4rem);
+  padding-top: 0.5rem;
+  margin-left: 1em;
+  margin-bottom: 1em;
+}
+.js-moves {
+  display: flex;
+  align-items: center; /* Выравнивает текст и картинки по одной линии */
+  width: fit-content; /* Ширина по контенту, чтобы фон не растягивался на весь экран */
+  padding: 10px;
+  border-radius: 10px;
+  margin-left: 1em;
+  gap: 8px;
+  font-size: clamp(1rem, 4vw, 2rem); /* Адаптивный размер текста */
+}
+
+/* Иконки в тексте (результат хода) */
+.js-moves .move-icon {
+  width: clamp(50px, 10vw, 120px);
+  height: clamp(50px, 10vw, 120px);
+  display: inline-block;
+  vertical-align: middle;
+}
+
+/* Иконки внутри кнопок выбора (делаем их снова большими) */
+.move-button .move-icon {
+  width: 100%; /* Занимает всю ширину кнопки */
+  height: 100%; /* Занимает всю высоту кнопки */
+  display: block; /* Чтобы работали центровка и размеры */
+  object-fit: contain; /* Чтобы картинка не обрезалась */
+}
+.button {
+  display: flex;
+  flex-direction: row;  
+  flex-wrap: nowrap; /* ЗАПРЕЩАЕМ перенос на новую строку */
+  
+  align-items: center; /* Выравнивает текст и картинки по одной линии */
+  width: 100%;
+  height: 100%;
+}
+/* Настройки для мобильных */
+@media (max-width: 480px) {
+  .button {
+    width: 25vw; /* Кнопка сжимается вместе с экраном */
+    height: 25vw;
+    padding: 3px; /* Уменьшаем отступ на мобильных */
+  }
+}
+.reset-score-button {
+  background-color: rgb(36, 241, 47);
+  border: bold;
+  cursor: pointer;
+  width: clamp(50px, 10vw, 100px);
+  height: clamp(70px, 10vw, 100px);
+  font-weight: bold;
+  margin-left: 2vw;
+  border-radius: 8px;
+}
+.auto-play-button {
+  background-color: rgb(36, 241, 47);
+  border: bold;
+  cursor: pointer;
+  margin-left: 0.8em;
+  width: clamp(70px, 10vw, 80px);
+  height: clamp(70px, 10vw, 100px);
+  border-radius: 8px;
+}
