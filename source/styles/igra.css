@@ -139,7 +139,7 @@ body {
   cursor: pointer;
   width: clamp(50px, 10vw, 100px);
   height: clamp(70px, 10vw, 100px);
-  font-weight: bold;
+  font-weight: 400;
   margin-left: 2vw;
   border-radius: 8px;
 }
