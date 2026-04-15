@@ -5,8 +5,7 @@ const clickSound = [
 ];
 function playSound(index) {
     const sound = clickSound[index]
-  // Сбрасываем время в 0, чтобы звук можно было прерывать и играть быстро
-  sound.currentTime = 0; 
+   sound.currentTime = 0; 
   sound.play();
 }
 
@@ -111,12 +110,12 @@ function plaer(hod) {
 
   if (result === "ВЫИГРАЛ !") {
     playSound(2);
-    body.style.backgroundColor = "rgb(76, 175, 80)"; // Приятный зеленый
+    body.style.backgroundColor = "rgb(76, 175, 80)"; 
   } else if (result === "ПРОИГРАЛ") {
     playSound(1);
-    body.style.backgroundColor = "rgb(244, 67, 54)"; // Мягкий красный
+    body.style.backgroundColor = "rgb(244, 67, 54)"; 
   } else if (result === "НИЧЬЯ") {
-    body.style.backgroundColor = " rgb(171, 182, 184)"; // Возвращаем ваш исходный цвет
+    body.style.backgroundColor = " rgb(171, 182, 184)"; 
   }
 
   localStorage.setItem("score", JSON.stringify(score));
